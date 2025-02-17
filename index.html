@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Interactive Webpage</h1>
+    
+    <button onclick="toggleBackground()">Toggle Background</button>
+    
+    <p id="text">Resize this text using the slider</p>
+    <input type="range" id="slider" min="10" max="50" value="16" oninput="adjustTextSize()">
+    
+    <button onclick="showModal()">Open Modal</button>
+    <div id="modal" class="hidden">
+        <div class="overlay" onclick="hideModal()"></div>
+        <div class="modal">
+            <p>This is a modal!</p>
+            <button onclick="hideModal()">Close</button>
+        </div>
+    </div>
+    
+    <h2>Form with Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Name" required>
+        <span id="nameError" style="color:red"></span><br>
+        
+        <input type="email" id="email" placeholder="Email" required>
+        <span id="emailError" style="color:red"></span><br>
+        
+        <input type="password" id="password" placeholder="Password" required>
+        <span id="passwordError" style="color:red"></span><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Dropdown Menu</h2>
+    <select id="dropdown" onchange="displayMessage()">
+        <option value="">Select an option</option>
+        <option value="Hello">Hello</option>
+        <option value="Welcome">Welcome</option>
+    </select>
+    <p id="dropdownMessage"></p>
+    
+    <script src="index.js"></script>
+</body>
+</html>
